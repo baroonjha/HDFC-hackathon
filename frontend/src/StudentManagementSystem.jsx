@@ -17,7 +17,7 @@ const StudentManagementSystem = () => {
   const [error, setError] = useState('');
 
   // API Base URL - change this to your backend URL
-  const API_BASE_URL = 'http://new-alb-282091034.us-east-1.elb.amazonaws.com/api';
+  const API_BASE_URL = 'https://new-alb-282091034.us-east-1.elb.amazonaws.com/api';
 
   // Fetch all students
   const fetchStudents = async () => {
