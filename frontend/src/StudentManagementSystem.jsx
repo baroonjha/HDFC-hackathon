@@ -23,7 +23,7 @@ const StudentManagementSystem = () => {
   const fetchStudents = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_BASE_URL}/students`);
+      const response = await fetch("/students");
       const data = await response.json();
       setStudents(data);
     } catch (error) {
@@ -36,7 +36,7 @@ const StudentManagementSystem = () => {
   // Create new student
   const createStudent = async (studentData) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/students`, {
+      const response = await fetch("/students", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const StudentManagementSystem = () => {
   // Update student
   const updateStudent = async (id, studentData) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/students/${id}`, {
+      const response = await fetch(`/students/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ const StudentManagementSystem = () => {
   const deleteStudent = async (id) => {
     if (window.confirm('Are you sure you want to delete this student?')) {
       try {
-        await fetch(`${API_BASE_URL}/students/${id}`, {
+        await fetch(`/students/${id}`, {
           method: 'DELETE',
         });
         setStudents(students.filter(s => s._id !== id));
