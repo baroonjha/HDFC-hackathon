@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "http://new-alb-282091034.us-east-1.elb.amazonaws.com/api/$1"
+    }
+  ]
+}
